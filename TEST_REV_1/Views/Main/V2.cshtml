@@ -1,0 +1,41 @@
+﻿
+@model TEST_REV_1.Models.ModelB
+@using TEST_REV_1.Models
+
+@{
+    ViewBag.Title = "V2";
+}
+
+<h2>V2</h2>
+
+<h1>THIS IS @ViewBag.Title</h1>
+
+@using (Html.BeginForm("V2", "Main", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.s1)
+    <br />
+    @Html.TextBoxFor(model => model.ans)
+    <br />
+    @Html.LabelFor(model => model.s2)
+    <br />
+    @Html.CheckBoxFor(model => model.ans2)
+    <br />
+    @Html.CheckBoxFor(model => model.ans2)
+    <br />
+    @Html.CheckBoxFor(model => model.ans2)
+    <br />
+    <br />
+    @Html.DropDownListFor(model => model.ans3, new SelectList(Enum.GetValues(typeof(stuff))), "select a stuff")
+
+    <br />
+    <br />
+    @Html.RadioButtonFor(model => model.ans4, stuff2.COLA2)
+    @Html.RadioButtonFor(model => model.ans4, stuff2.LOL2)
+    @Html.RadioButtonFor(model => model.ans4, stuff2.OLO2)
+    @Html.RadioButtonFor(model => model.ans4, stuff2.YOLO2)
+
+    <br />
+    @Html.TextBox("sumb", "sumb", new { type="submit", value="subs"})
+}
+
+

@@ -1,0 +1,48 @@
+﻿
+@model TEST_REV_1.Models.ModelA
+
+@{
+    ViewBag.Title = "V1";
+}
+
+<h2>V1</h2>
+
+<h1>THIS IS @ViewBag.Title</h1>
+
+@using (Html.BeginForm("V1", "Main", FormMethod.Post))
+{
+    @Html.Label("ii", "This is for a try 1")
+    <br />
+    @Html.TextBox("res");
+    <br />
+
+    @Html.Label("This is for radio", "", new { id = "lol", @class = "poke" })
+    <br />
+    @Html.RadioButton("na", 3) @:&nbsp;
+    @Html.RadioButton("na", "Str2") @:&nbsp;
+    @Html.RadioButton("na", 34.66)
+    <br /><br />
+
+    @Html.TextBox("num", "num", new { type="number"})
+
+    <br /><br/>
+    @Html.TextBox("subB","subB", new { type="submit", value = "SUBMIT AND SEE GET"})
+
+
+}
+
+@if (ViewBag.radiRes != null & ViewData["theStr"] != null)
+{
+    <p>@ViewData["theStr"]</p>
+    <p>@ViewBag.radiRes</p>
+
+    <p>@Model.res</p>
+    for(int x = 0; x<Model.nn; x++)
+    {
+        <p>@Model.printAccordingint()</p>
+    }
+}
+else
+{
+    <p>NOT OK</p>
+}
